@@ -1,0 +1,219 @@
+html {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Mukta', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    background-color: #fff;
+    color: #222;
+    background: #C9D6FF;  /* fallback for old browsers */
+    background: rgb(127,127,213);
+    background: linear-gradient(90deg, rgba(127,127,213,1) 16%, rgba(145,234,228,1) 100%);
+    
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+.container {
+    max-width: 1440px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.test-container{
+    width: 1000px;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+h1{
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    margin-top: 40px;
+    text-align: center;
+}
+
+.links{
+    display: flex;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+}
+
+.link{
+    padding: 10px 20px;
+    margin-right: 20px;
+    text-align: center;
+    color: #fff;
+    text-decoration: none;
+    background: #C9D6FF;  /* fallback for old browsers */
+    background: rgb(127,127,213);
+    /* background: linear-gradient(90deg, rgba(127,127,213,1) 16%, rgba(145,234,228,1) 100%); */
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 3px;
+}
+
+.link:last-child {
+    margin-right: 0;
+}
+
+.inputs{
+    margin-top: 50px;
+    display: flex;
+}
+
+.input{
+    background: #C9D6FF;  /* fallback for old browsers */
+    background: rgb(127,127,213);
+    /* background: linear-gradient(90deg, rgba(127,127,213,1) 16%, rgba(145,234,228,1) 100%); */
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border: none;
+    margin-right: 20px;
+    color: #fff;
+    padding: 10px 20px;
+    padding-left: 20px;
+    border-radius: 3px;
+}
+
+.input::placeholder {
+    color: #fff;
+}
+
+.btn{
+    background: #C9D6FF;  /* fallback for old browsers */
+    background: rgb(127,127,213);
+    /* background: linear-gradient(90deg, rgba(127,127,213,1) 16%, rgba(145,234,228,1) 100%); */
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 3px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.x-btn{
+    /* margin: auto; */
+    text-align: center;
+    color: #fff;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    /* jcc */
+    background: rgba(255, 0, 0, 0.4);
+    cursor: pointer;
+}
+
+.x-btn:active{
+    opacity: 0.9;
+}
+
+.info-wrapper{
+    width: 610px;
+    display: flex;
+    overflow: auto;
+    margin-top: 30px;
+    max-height: 350px;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    border: 1px solid #fff;
+    /* justify-content: space-between; */
+}
+
+.li:first-child {
+    width: 55px;
+}
+
+.li {
+    width: 100px;
+    color: #fff;
+    margin-top: 15px;
+    padding: 5px 10px;
+    margin-left: 15px;
+    margin-right: 15px;
+    text-align: center;
+    margin-bottom: 15px;
+    border: 1px solid #fff;
+}
+
+.error {
+    width: 100px;
+    color: #fff;
+    cursor: pointer;
+    margin-top: 15px;
+    margin-left: 15px;
+    font-size: 16px;
+    padding: 5px 10px;
+    margin-right: 15px;
+    margin-bottom: 15px;
+    background: transparent;
+    border: 1px solid #fff;
+}
+
+.balans-ul {
+    margin: 0;
+    padding: 0;
+    width: 317px;
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    border: 1px solid #fff;
+}
+
+.balans-li {
+    width: 75px;
+    color: #fff;
+    margin-top: 15px;
+    padding: 5px 10px;
+    margin-left: 15px;
+    margin-right: 15px;
+    text-align: center;
+    margin-bottom: 15px;
+    border: 1px solid #fff;
+    /* background: linear-gradient(270deg, rgba(127,127,213,1) 16%, rgba(145,234,228,1) 100%); */
+}
+
+.balans-li:first-child {
+    width: 75px;
+}
