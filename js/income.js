@@ -1,5 +1,5 @@
-const incomeDiv = document.querySelector('.info-wrapper')
-const incomeUl = document.querySelector('.ul')
+const expanseDiv = document.querySelector('.info-wrapper')
+const balansTable = document.getElementById('balansTable')
 const purposeInput = document.getElementById('maqsadInput')
 const sumInput = document.getElementById('summaInput')
 const addBtn = document.getElementById('addBtn')
@@ -8,30 +8,30 @@ const inCome = JSON.parse(localStorage.getItem('inCome')) || [];
 
 const globalTime = new Date()
 
-
 const setItemStorage = () => {
     localStorage.setItem('inCome', JSON.stringify(inCome));
 }
 
 const getItemStorage = () => {
     inCome.forEach(item => {
-        const purposeUl = document.createElement('ul')
-        purposeUl.classList.add('ul')
+        const tbody = document.createElement('tbody')
         
-        const purposeId = document.createElement('li')
+        const tr = document.createElement('tr')
+        
+        const purposeId = document.createElement('td')
         purposeId.textContent = 1
-        purposeId.classList.add('li')
+        purposeId.classList.add('balans-li')
         
-        const purposeLi = document.createElement('li')
-        purposeLi.classList.add('li')
+        const purposeLi = document.createElement('td')
+        purposeLi.classList.add('balans-li')
         purposeLi.textContent = item.purpose
         
-        const sumLi = document.createElement('li')
-        sumLi.classList.add('li')
+        const sumLi = document.createElement('td')
+        sumLi.classList.add('balans-li')
         sumLi.textContent = item.sum
         
-        const dateLi = document.createElement('li')
-        dateLi.classList.add('li')
+        const dateLi = document.createElement('td')
+        dateLi.classList.add('balans-li')
         dateLi.textContent = item.date
         
         const deleteBtn = document.createElement('button')
@@ -39,13 +39,14 @@ const getItemStorage = () => {
         deleteBtn.classList.add('error')
         deleteBtn.classList.add('deleteBtn')
         
-        purposeUl.appendChild(purposeId)
-        purposeUl.appendChild(purposeLi)
-        purposeUl.appendChild(sumLi)
-        purposeUl.appendChild(dateLi)
-        purposeUl.appendChild(deleteBtn)
+        tr.appendChild(purposeId)
+        tr.appendChild(purposeLi)
+        tr.appendChild(sumLi)
+        tr.appendChild(dateLi)
+        tr.appendChild(deleteBtn)
         
-        incomeDiv.appendChild(purposeUl)
+        tbody.appendChild(tr)
+        balansTable.appendChild(tbody)
         deleteFunc()
     });
 }
@@ -84,38 +85,38 @@ addBtn.addEventListener('click', ()=> {
         return
     }
     
-    const purposeUl = document.createElement('ul')
-    purposeUl.classList.add('ul')
+    const purposeTr = document.createElement('tr')
+    // purposeTr.classList.add('balans-tr')
     
-    const purposeId = document.createElement('li')
+    const purposeId = document.createElement('td')
     purposeId.textContent = 1
-    purposeId.classList.add('li')
+    purposeId.classList.add('balans-li')
     
-    const purposeLi = document.createElement('li')
-    purposeLi.classList.add('li')
+    const purposeLi = document.createElement('td')
+    purposeLi.classList.add('balans-li')
     purposeLi.textContent = purposeInput.value
     
-    const sumLi = document.createElement('li')
-    sumLi.classList.add('li')
+    const sumLi = document.createElement('td')
+    sumLi.classList.add('balans-li')
     sumLi.textContent = sumInput.value
     
-    const dateLi = document.createElement('li')
-    dateLi.classList.add('li')
+    const dateLi = document.createElement('td')
+    dateLi.classList.add('balans-li')
     dateLi.textContent = `${globalTime.getMonth() + 1}/${globalTime.getDate()}/${globalTime.getFullYear()}`
     
     const deleteBtn = document.createElement('button')
     deleteBtn.textContent = "O'chirish"
-    deleteBtn.id
+    // deleteBtn.id
     deleteBtn.classList.add('error')
     deleteBtn.classList.add('deleteBtn')
     
-    purposeUl.appendChild(purposeId)
-    purposeUl.appendChild(purposeLi)
-    purposeUl.appendChild(sumLi)
-    purposeUl.appendChild(dateLi)
-    purposeUl.appendChild(deleteBtn)
+    purposeTr.appendChild(purposeId)
+    purposeTr.appendChild(purposeLi)
+    purposeTr.appendChild(sumLi)
+    purposeTr.appendChild(dateLi)
+    purposeTr.appendChild(deleteBtn)
     
-    incomeDiv.appendChild(purposeUl)
+    balansTable.appendChild(purposeTr)
     deleteFunc()
     
     inCome.push(

@@ -1,5 +1,5 @@
 const expanseDiv = document.querySelector('.info-wrapper')
-const expanseUl = document.querySelector('.ul')
+const balansTable = document.getElementById('balansTable')
 const purposeInput = document.getElementById('maqsadInput')
 const sumInput = document.getElementById('summaInput')
 const addBtn = document.getElementById('addBtn')
@@ -15,23 +15,27 @@ const setItemStorage = () => {
 
 const getItemStorage = () => {
     expanse.forEach(item => {
-        const purposeUl = document.createElement('ul')
-        purposeUl.classList.add('ul')
+        // const purposeTable = document.createElement('table')
+        // purposeTable.classList.add('ul')
         
-        const purposeId = document.createElement('li')
+        const tbody = document.createElement('tbody')
+        
+        const tr = document.createElement('tr')
+        
+        const purposeId = document.createElement('td')
         purposeId.textContent = 1
-        purposeId.classList.add('li')
+        purposeId.classList.add('balans-li')
         
-        const purposeLi = document.createElement('li')
-        purposeLi.classList.add('li')
+        const purposeLi = document.createElement('td')
+        purposeLi.classList.add('balans-li')
         purposeLi.textContent = item.purpose
         
-        const sumLi = document.createElement('li')
-        sumLi.classList.add('li')
+        const sumLi = document.createElement('td')
+        sumLi.classList.add('balans-li')
         sumLi.textContent = item.sum
         
-        const dateLi = document.createElement('li')
-        dateLi.classList.add('li')
+        const dateLi = document.createElement('td')
+        dateLi.classList.add('balans-li')
         dateLi.textContent = item.date
         
         const deleteBtn = document.createElement('button')
@@ -39,13 +43,14 @@ const getItemStorage = () => {
         deleteBtn.classList.add('error')
         deleteBtn.classList.add('deleteBtn')
         
-        purposeUl.appendChild(purposeId)
-        purposeUl.appendChild(purposeLi)
-        purposeUl.appendChild(sumLi)
-        purposeUl.appendChild(dateLi)
-        purposeUl.appendChild(deleteBtn)
+        tr.appendChild(purposeId)
+        tr.appendChild(purposeLi)
+        tr.appendChild(sumLi)
+        tr.appendChild(dateLi)
+        tr.appendChild(deleteBtn)
         
-        expanseDiv.appendChild(purposeUl)
+        tbody.appendChild(tr)
+        balansTable.appendChild(tbody)
         deleteFunc()
     });
 }
@@ -84,23 +89,28 @@ addBtn.addEventListener('click', ()=> {
         return
     }
     
-    const purposeUl = document.createElement('ul')
-    purposeUl.classList.add('ul')
+    // const purposeTable = document.createElement('table')
+    // purposeTable.classList.add('ul')
+
+    const purposeTbody = document.createElement('tbody')
     
-    const purposeId = document.createElement('li')
+    const purposeTr = document.createElement('tr')
+    // purposeTr.classList.add('balans-tr')
+    
+    const purposeId = document.createElement('td')
     purposeId.textContent = 1
-    purposeId.classList.add('li')
+    purposeId.classList.add('balans-li')
     
-    const purposeLi = document.createElement('li')
-    purposeLi.classList.add('li')
+    const purposeLi = document.createElement('td')
+    purposeLi.classList.add('balans-li')
     purposeLi.textContent = purposeInput.value
     
-    const sumLi = document.createElement('li')
-    sumLi.classList.add('li')
+    const sumLi = document.createElement('td')
+    sumLi.classList.add('balans-li')
     sumLi.textContent = sumInput.value
     
-    const dateLi = document.createElement('li')
-    dateLi.classList.add('li')
+    const dateLi = document.createElement('td')
+    dateLi.classList.add('balans-li')
     dateLi.textContent = `${globalTime.getMonth() + 1}/${globalTime.getDate()}/${globalTime.getFullYear()}`
     
     const deleteBtn = document.createElement('button')
@@ -109,13 +119,13 @@ addBtn.addEventListener('click', ()=> {
     deleteBtn.classList.add('error')
     deleteBtn.classList.add('deleteBtn')
     
-    purposeUl.appendChild(purposeId)
-    purposeUl.appendChild(purposeLi)
-    purposeUl.appendChild(sumLi)
-    purposeUl.appendChild(dateLi)
-    purposeUl.appendChild(deleteBtn)
+    purposeTr.appendChild(purposeId)
+    purposeTr.appendChild(purposeLi)
+    purposeTr.appendChild(sumLi)
+    purposeTr.appendChild(dateLi)
+    purposeTr.appendChild(deleteBtn)
     
-    expanseDiv.appendChild(purposeUl)
+    balansTable.appendChild(purposeTr)
     deleteFunc()
     
     expanse.push(
@@ -129,33 +139,30 @@ addBtn.addEventListener('click', ()=> {
         purposeInput.value = ''
         sumInput.value = ''
     })
-
+    
     getItemStorage()
     
+    // const table = document.createElement('table')
+    // table.classList.add('ul')
     
-    // {
-    //     income: [
-    //         {
-    //             income_id: 1,
-    //             income_purpose: 'Bot reklama',
-    //             income_sum: 150000,
-    //             income_date: '03/27/2024'
-    //         },
-    //         {
-    //             income_id: 2,
-    //             income_purpose: 'Verstka sayt',
-    //             income_sum: 200000,
-    //             income_date: '03/27/2024'
-    //         },
-    //     ],
-    //     expanse: [
-    //         {
-    //             expanse_id: 4,
-    //             expanse_purpose: 'Paynet',
-    //             expanse_sum: 50000,
-    //             expanse_date: '03/27/2024'
-    //         },
-    //     ]
-    // }
+    // const tbody = document.createElement('tbody')
     
+    // const tr = document.createElement('tr')
+    
+    // const inComeTh = document.createElement('th')
+    // inComeTh.classList.add('balans-li')
+    
+    // const exPanseTh = document.createElement('th')
+    // exPanseTh.classList.add('balans-li')
+    
+    // const balansTh = document.createElement('th')
+    // balansTh.classList.add('balans-li')
+    
+    // tr.appendChild(inComeTh)
+    // tr.appendChild(exPanseTh)
+    // tr.appendChild(balansTh)
+    
+    // tbody.appendChild(tr)
+    
+    // balansTable.appendChild(tbody)
     

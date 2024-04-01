@@ -1,4 +1,4 @@
-const incomeDiv = document.querySelector('.info-wrapper')
+const balansTable = document.getElementById('balansTable')
 const incomeUl = document.querySelector('.ul')
 let allDeleteBtns = document.querySelectorAll('.deleteBtn')
 const inCome = JSON.parse(localStorage.getItem('inCome')) || [];
@@ -33,23 +33,29 @@ let balans = totalIncome - totalExpense
 
 console.log("Balans:", balans);
 
-const balansUl = document.createElement('ul')
-balansUl.classList.add('ul')
+const table = document.createElement('table')
+table.classList.add('ul')
 
-const inComeLi = document.createElement('li')
-inComeLi.textContent = totalIncome
-inComeLi.classList.add('balans-li')
+const tbody = document.createElement('tbody')
 
-const ExpanseLi = document.createElement('li')
-ExpanseLi.textContent = totalExpense
-ExpanseLi.classList.add('balans-li')
+const tr = document.createElement('tr')
 
-const balansLi = document.createElement('li')
-balansLi.textContent = balans
-balansLi.classList.add('balans-li')
+const inComeTh = document.createElement('th')
+inComeTh.textContent = totalIncome
+inComeTh.classList.add('balans-li')
 
-balansUl.appendChild(inComeLi)
-balansUl.appendChild(ExpanseLi)
-balansUl.appendChild(balansLi)
+const exPanseTh = document.createElement('th')
+exPanseTh.textContent = totalExpense
+exPanseTh.classList.add('balans-li')
 
-incomeDiv.appendChild(balansUl)
+const balansTh = document.createElement('th')
+balansTh.textContent = balans
+balansTh.classList.add('balans-li')
+
+tr.appendChild(inComeTh)
+tr.appendChild(exPanseTh)
+tr.appendChild(balansTh)
+
+tbody.appendChild(tr)
+
+balansTable.appendChild(tbody)
