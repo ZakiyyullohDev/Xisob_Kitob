@@ -33,29 +33,26 @@ let balans = totalIncome - totalExpense
 
 console.log("Balans:", balans);
 
-const table = document.createElement('table')
-table.classList.add('ul')
+// const table = document.createElement('table')
+// table.classList.add('ul')
 
-const tbody = document.createElement('tbody')
+// const tbody = document.createElement('tbody')
 
-const tr = document.createElement('tr')
+const tr = document.getElementById('tr')
 
-const inComeTh = document.createElement('th')
+const inComeTh = document.getElementById('inComeTd')
 inComeTh.textContent = totalIncome
-inComeTh.classList.add('balans-li')
 
-const exPanseTh = document.createElement('th')
+const exPanseTh = document.getElementById('exPanseTd')
 exPanseTh.textContent = totalExpense
-exPanseTh.classList.add('balans-li')
 
-const balansTh = document.createElement('th')
+const balansTh = document.getElementById('balansTd')
 balansTh.textContent = balans
-balansTh.classList.add('balans-li')
 
 tr.appendChild(inComeTh)
 tr.appendChild(exPanseTh)
 tr.appendChild(balansTh)
 
-tbody.appendChild(tr)
+// tbody.appendChild(tr)
 
 balansTable.appendChild(tbody)

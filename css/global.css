@@ -32,7 +32,7 @@ body {
     line-height: 1.5;
     background-color: #fff;
     color: #222;
-    background: #C9D6FF;  /* fallback for old browsers */
+    background: #C9D6FF;
     background: rgb(127,127,213);
     background: linear-gradient(90deg, rgba(127,127,213,1) 16%, rgba(145,234,228,1) 100%);
     
@@ -94,9 +94,8 @@ h1{
     text-align: center;
     color: #fff;
     text-decoration: none;
-    background: #C9D6FF;  /* fallback for old browsers */
+    background: #C9D6FF;
     background: rgb(127,127,213);
-    /* background: linear-gradient(90deg, rgba(127,127,213,1) 16%, rgba(145,234,228,1) 100%); */
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     border-radius: 3px;
 }
@@ -111,24 +110,28 @@ h1{
 }
 
 .input{
-    background: #C9D6FF;  /* fallback for old browsers */
+    background: #C9D6FF;
     background: rgb(127,127,213);
-    /* background: linear-gradient(90deg, rgba(127,127,213,1) 16%, rgba(145,234,228,1) 100%); */
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    border: none;
+    border: 3px solid rgb(127,127,213);
     margin-right: 20px;
     color: #fff;
     padding: 10px 20px;
     padding-left: 20px;
     border-radius: 3px;
+    transition: all 0.3s ease-in-out;
 }
 
 .input::placeholder {
     color: #fff;
 }
 
+.input:focus {
+    outline: 3px solid rgb(92, 92, 194);
+}
+
 .btn{
-    background: #C9D6FF;  /* fallback for old browsers */
+    background: #C9D6FF;
     background: rgb(127,127,213);
     /* background: linear-gradient(90deg, rgba(127,127,213,1) 16%, rgba(145,234,228,1) 100%); */
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -159,7 +162,7 @@ h1{
     width: 610px;
     display: flex;
     overflow: auto;
-    margin-top: 30px;
+    /* margin-top: 30px; */
     max-height: 350px;
     align-items: center;
     flex-direction: column;
@@ -217,4 +220,31 @@ h1{
     text-align: center;
     margin-bottom: 15px;
     border: 1px solid #fff;
+}
+
+.deleteBtn {
+    transition: all 0.3s ease-in-out;
+}
+.deleteBtn:hover {
+    color: #8195d8;
+    background-color: #fff;
+}
+
+.fail {
+    background: tomato;
+    border: 3px solid red;
+    box-shadow: 0px 0px 30px 5px red;
+}
+
+.display-none {
+    display: none;
+}
+
+.undefinedInput {
+    color: red;
+    font-size: 24px;
+    font-weight: 700;
+    text-align: center;
+    background: transparent;
+    text-shadow: 2px 2px 5px tomato;
 }

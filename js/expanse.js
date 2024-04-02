@@ -69,33 +69,48 @@ const deleteFunc = () => {
     }
 }
 
-addBtn.addEventListener('click', ()=> {
+const addFunc = () => {
     if (!purposeInput.value) {
-        alert('Iltimos Maqsad Kiriting!')
+        purposeInput.classList.add('fail')
+        undefinedInput.textContent = 'Iltimos Maqsad Kiriting!'
+        setTimeout(() => {
+            purposeInput.classList.remove('fail')
+            undefinedInput.textContent = ''
+        }, 3000);
         return
     }
     if (purposeInput.value.length > 30) {
-        alert('Maqsadingiz uzayib ketdi! Iltimos Kamaytiring:')
         purposeInput.value = ''
+        undefinedInput.textContent = 'Maqsadingiz uzayib ketdi! Iltimos Kamaytiring:'
+        purposeInput.classList.add('fail')
+        setTimeout(() => {
+            undefinedInput.textContent = ''
+            purposeInput.classList.remove('fail')
+        }, 3000);
         return
     }
     if (!sumInput.value) {
-        alert('Iltimos Summa Kiriting!')
         sumInput.value = ''
+        undefinedInput.textContent = 'Iltimos Summa Kiriting!'
+        sumInput.classList.add('fail')
+        setTimeout(() => {
+            undefinedInput.textContent = ''
+            sumInput.classList.remove('fail')
+        }, 3000);
         return
     }
     if (sumInput.value < 0) {
+        undefinedInput.textContent = 'Iltimos Summa Kiriting!'
+        sumInput.classList.add('fail')
+        setTimeout(() => {
+            undefinedInput.textContent = ''
+            sumInput.classList.remove('fail')
+        }, 3000);
         sumInput.value = ''
         return
     }
     
-    // const purposeTable = document.createElement('table')
-    // purposeTable.classList.add('ul')
-
-    const purposeTbody = document.createElement('tbody')
-    
     const purposeTr = document.createElement('tr')
-    // purposeTr.classList.add('balans-tr')
     
     const purposeId = document.createElement('td')
     purposeId.textContent = 1
@@ -138,31 +153,16 @@ addBtn.addEventListener('click', ()=> {
         setItemStorage()
         purposeInput.value = ''
         sumInput.value = ''
+    }
+    
+    addBtn.addEventListener('click', ()=> {
+        addFunc()
+    })
+
+    sumInput.addEventListener('keydown', e => {
+        if (e.keyCode == 13) {
+            addFunc()
+        }
     })
     
     getItemStorage()
-    
-    // const table = document.createElement('table')
-    // table.classList.add('ul')
-    
-    // const tbody = document.createElement('tbody')
-    
-    // const tr = document.createElement('tr')
-    
-    // const inComeTh = document.createElement('th')
-    // inComeTh.classList.add('balans-li')
-    
-    // const exPanseTh = document.createElement('th')
-    // exPanseTh.classList.add('balans-li')
-    
-    // const balansTh = document.createElement('th')
-    // balansTh.classList.add('balans-li')
-    
-    // tr.appendChild(inComeTh)
-    // tr.appendChild(exPanseTh)
-    // tr.appendChild(balansTh)
-    
-    // tbody.appendChild(tr)
-    
-    // balansTable.appendChild(tbody)
-    

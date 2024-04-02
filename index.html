@@ -11,16 +11,16 @@
 <body>
     
     <div class="container">
-
+        
         <h1>Balans</h1>
         
         <div class="test-container">
-            <div class="links">
+            <div class="links" style="margin-bottom: 60px;">
                 <a class="link" href="index.html">Balans</a>
                 <a class="link" href="income.html">Kirim</a>
                 <a class="link" href="expanse.html">Chiqim</a>
             </div>
-
+            
             <div class="info-wrapper">
                 <table id="balansTable" class="balans-ul">
                     <thead>
@@ -30,12 +30,18 @@
                             <th class="li">Balans</th>
                         </tr>
                     </thead>
+                    <tbody id="tbody">
+                        <tr id="tr">
+                            <td class="balans-li" id="inComeTd">0</td>
+                            <td class="balans-li" id="exPanseTd">0</td>
+                            <td class="balans-li" id="balansTd">0</td>
+                        </tr>
+                    </tbody>
                 </table>
             </div>
         </div>
         
     </div>
-    
     <script src="js/index.js"></script>
     
 </body>

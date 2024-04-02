@@ -3,6 +3,7 @@ const balansTable = document.getElementById('balansTable')
 const purposeInput = document.getElementById('maqsadInput')
 const sumInput = document.getElementById('summaInput')
 const addBtn = document.getElementById('addBtn')
+const undefinedInput = document.getElementById('undefinedInput')
 let allDeleteBtns = document.querySelectorAll('.deleteBtn')
 const inCome = JSON.parse(localStorage.getItem('inCome')) || [];
 
@@ -65,28 +66,48 @@ const deleteFunc = () => {
     }
 }
 
-addBtn.addEventListener('click', ()=> {
+const addFunc = () => {
     if (!purposeInput.value) {
-        alert('Iltimos Maqsad Kiriting!')
+        purposeInput.classList.add('fail')
+        undefinedInput.textContent = 'Iltimos Maqsad Kiriting!'
+        setTimeout(() => {
+            purposeInput.classList.remove('fail')
+            undefinedInput.textContent = ''
+        }, 3000);
         return
     }
     if (purposeInput.value.length > 30) {
-        alert('Maqsadingiz uzayib ketdi! Iltimos Kamaytiring:')
         purposeInput.value = ''
+        undefinedInput.textContent = 'Maqsadingiz uzayib ketdi! Iltimos Kamaytiring:'
+        purposeInput.classList.add('fail')
+        setTimeout(() => {
+            undefinedInput.textContent = ''
+            purposeInput.classList.remove('fail')
+        }, 3000);
         return
     }
     if (!sumInput.value) {
-        alert('Iltimos Summa Kiriting!')
         sumInput.value = ''
+        undefinedInput.textContent = 'Iltimos Summa Kiriting!'
+        sumInput.classList.add('fail')
+        setTimeout(() => {
+            undefinedInput.textContent = ''
+            sumInput.classList.remove('fail')
+        }, 3000);
         return
     }
     if (sumInput.value < 0) {
+        undefinedInput.textContent = 'Iltimos Summa Kiriting!'
+        sumInput.classList.add('fail')
+        setTimeout(() => {
+            undefinedInput.textContent = ''
+            sumInput.classList.remove('fail')
+        }, 3000);
         sumInput.value = ''
         return
     }
     
     const purposeTr = document.createElement('tr')
-    // purposeTr.classList.add('balans-tr')
     
     const purposeId = document.createElement('td')
     purposeId.textContent = 1
@@ -129,34 +150,17 @@ addBtn.addEventListener('click', ()=> {
         setItemStorage()
         purposeInput.value = ''
         sumInput.value = ''
-    })
+}
 
-    getItemStorage()
-    
-    
-    // {
-    //     income: [
-    //         {
-    //             income_id: 1,
-    //             income_purpose: 'Bot reklama',
-    //             income_sum: 150000,
-    //             income_date: '03/27/2024'
-    //         },
-    //         {
-    //             income_id: 2,
-    //             income_purpose: 'Verstka sayt',
-    //             income_sum: 200000,
-    //             income_date: '03/27/2024'
-    //         },
-    //     ],
-    //     expanse: [
-    //         {
-    //             expanse_id: 4,
-    //             expanse_purpose: 'Paynet',
-    //             expanse_sum: 50000,
-    //             expanse_date: '03/27/2024'
-    //         },
-    //     ]
-    // }
-    
-    
+addBtn.addEventListener('click', ()=> {
+    addFunc()
+})
+
+sumInput.addEventListener('keydown', e => {
+    if (e.keyCode == 13) {
+        addFunc()
+    }
+})
+
+
+getItemStorage()
