@@ -231,9 +231,9 @@ h1{
 }
 
 .fail {
-    background: tomato;
+    /* background: tomato; */
     border: 3px solid red;
-    box-shadow: 0px 0px 30px 5px red;
+    /* box-shadow: 0px 0px 30px 5px red; */
 }
 
 .display-none {

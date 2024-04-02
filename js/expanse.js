@@ -72,38 +72,30 @@ const deleteFunc = () => {
 const addFunc = () => {
     if (!purposeInput.value) {
         purposeInput.classList.add('fail')
-        undefinedInput.textContent = 'Iltimos Maqsad Kiriting!'
         setTimeout(() => {
             purposeInput.classList.remove('fail')
-            undefinedInput.textContent = ''
         }, 3000);
         return
     }
     if (purposeInput.value.length > 30) {
         purposeInput.value = ''
-        undefinedInput.textContent = 'Maqsadingiz uzayib ketdi! Iltimos Kamaytiring:'
         purposeInput.classList.add('fail')
         setTimeout(() => {
-            undefinedInput.textContent = ''
             purposeInput.classList.remove('fail')
         }, 3000);
         return
     }
     if (!sumInput.value) {
         sumInput.value = ''
-        undefinedInput.textContent = 'Iltimos Summa Kiriting!'
         sumInput.classList.add('fail')
         setTimeout(() => {
-            undefinedInput.textContent = ''
             sumInput.classList.remove('fail')
         }, 3000);
         return
     }
     if (sumInput.value < 0) {
-        undefinedInput.textContent = 'Iltimos Summa Kiriting!'
         sumInput.classList.add('fail')
         setTimeout(() => {
-            undefinedInput.textContent = ''
             sumInput.classList.remove('fail')
         }, 3000);
         sumInput.value = ''
