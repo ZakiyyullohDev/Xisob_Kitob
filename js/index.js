@@ -10,24 +10,28 @@ const expanse = JSON.parse(localStorage.getItem('expanse'))
 let totalIncome = 0;
 let totalExpense = 0;
 
-income.forEach(incomeElement => {
-    const purpose = incomeElement.purpose
-    const id = incomeElement.id
-    const incomeSum = Number(incomeElement.sum)
-    const date = incomeElement.date
-    totalIncome += incomeSum;
-    console.log("Kirim so'm:", totalIncome);
-})
+if (inCome) {
+    inCome.forEach(incomeElement => {
+        const purpose = incomeElement.purpose
+        const id = incomeElement.id
+        const incomeSum = Number(incomeElement.sum)
+        const date = incomeElement.date
+        totalIncome += incomeSum;
+        console.log("Kirim so'm:", totalIncome);
+    })
+    
+}
 
-expanse.forEach(expanseElement => {
-    const purpose = expanseElement.purpose
-    const id = expanseElement.id
-    const expanseSum = Number(expanseElement.sum)
-    const date = expanseElement.date
-    totalExpense += expanseSum;
-    console.log("Chiqim so'm:", totalExpense);
-
-});
+if (exPanse) {
+    exPanse.forEach(expanseElement => {
+        const purpose = expanseElement.purpose
+        const id = expanseElement.id
+        const expanseSum = Number(expanseElement.sum)
+        const date = expanseElement.date
+        totalExpense += expanseSum;
+        console.log("Chiqim so'm:", totalExpense);
+    })
+}
 
 let balans = totalIncome - totalExpense
 
